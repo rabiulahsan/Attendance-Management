@@ -1,0 +1,20 @@
+[
+  {
+    "batch": "7a-cns",
+    "subject": "Computer and Network Security",
+    "subjCode": "CNS",
+    "totalStudents": 30
+  },
+  {
+    "batch": "7a-pdp",
+    "subject": "Parallal Distributing and Processing",
+    "subjCode": "PDP",
+    "totalStudents": 25
+  },
+  {
+    "batch": "7a-ma",
+    "subject": "Multimedia Application",
+    "subjCode": "MA",
+    "totalStudents": 25
+  }
+]
