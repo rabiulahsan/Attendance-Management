@@ -45,8 +45,12 @@ const Login = () => {
           ></input>
         </div>
 
-        <div className="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          <input className="btn btn-primary" type="submit" value="Login" />
+        <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <input
+            className=" cursor-pointer btn btn-primary"
+            type="submit"
+            value="Login"
+          />
         </div>
       </form>
     </div>

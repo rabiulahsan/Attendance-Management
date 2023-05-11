@@ -50,7 +50,6 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
 
   //google log in
 
