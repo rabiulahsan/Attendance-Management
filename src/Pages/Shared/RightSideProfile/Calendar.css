@@ -10,5 +10,9 @@
   font-size: 28px !important;
 }
 .css-i7y1zb-MuiStack-root {
-  padding: 15px !important;
+  padding: 8px !important;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 5px;
+  overflow: hidden !important;
 }

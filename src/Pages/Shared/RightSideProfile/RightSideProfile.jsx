@@ -9,8 +9,8 @@ const RightSideProfile = () => {
     photoURL: null,
   };
   return (
-    <div className="bg-[#eaf0f8] h-[710px] w-full">
-      <div className="py-[10%] text-center flex items-center justify-center flex-col">
+    <div className="bg-[#ebeaf8] h-[710px] w-full py-3">
+      <div className="py-[10%] text-center flex items-center justify-center flex-col bg-white rounded-[10px] mb-4 mx-[5px]">
         <div className="text-center">
           {user.photoURL ? (
             <img className="mx-auto" src={user.photoURL} />
