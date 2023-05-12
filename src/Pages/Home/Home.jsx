@@ -4,15 +4,10 @@ import { Button } from "@mui/material";
 import LeftSideNavbar from "../Shared/LeftSideNavbar/LeftSideNavbar";
 import RightSideProfile from "../Shared/RightSideProfile/RightSideProfile";
 import Header from "./Header";
+import Classes from "./Classes";
+import Assignment from "./Assignment";
 
 const Home = () => {
-  //   const [classes, setClasses] = useState([]);
-
-  //   useEffect(() => {
-  //     fetch("/classes.json")
-  //       .then((res) => res.json())
-  //       .then((data) => setClasses(data));
-  //   }, []);
   return (
     <div>
       <div className="flex w-full">
@@ -21,6 +16,14 @@ const Home = () => {
         </div>
         <div className="w-3/5 bg-[#ebeaf8]">
           <Header></Header>
+          <div className="flex my-[3%] mx-[3%] gap-5">
+            <div className="w-full">
+              <Classes></Classes>
+            </div>
+            <div className="w-full">
+              <Assignment></Assignment>
+            </div>
+          </div>
         </div>
         <div className="w-1/5 ">
           <RightSideProfile></RightSideProfile>

@@ -4,6 +4,7 @@
     "batch": "7a-cns",
     "subject": "Computer and Network Security",
     "subjCode": "CNS",
+    "semester": "6th",
     "totalStudents": 30
   },
   {
@@ -11,6 +12,7 @@
     "batch": "7a-pdp",
     "subject": "Parallal Distributing and Processing",
     "subjCode": "PDP",
+    "semester": "6th",
     "totalStudents": 25
   },
   {
@@ -18,6 +20,7 @@
     "batch": "7a-ma",
     "subject": "Multimedia Application",
     "subjCode": "MA",
+    "semester": "6th",
     "totalStudents": 25
   }
 ]

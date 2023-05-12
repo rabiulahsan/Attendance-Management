@@ -9,7 +9,7 @@ const Header = () => {
     photoURL: null,
   };
   return (
-    <div className="my-[5%] mx-[3%] p-[4%] bg-white rounded-[10px] flex justify-between items-center">
+    <div className="my-[3%] mx-[3%] p-[4%] bg-white rounded-[10px] flex justify-between items-center">
       <div className="text-3xl font-light flex items-center">
         <span className=" inline-block">
           <Player
