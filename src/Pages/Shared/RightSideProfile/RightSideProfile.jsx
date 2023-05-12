@@ -9,7 +9,7 @@ const RightSideProfile = () => {
     photoURL: null,
   };
   return (
-    <div className="bg-[#ebeaf8] h-[710px] w-full py-3">
+    <div className="bg-[#ebeaf8] h-[710px] w-full py-3 sticky top-0">
       <div className="py-[10%] text-center flex items-center justify-center flex-col bg-white rounded-[10px] mb-4 mx-[5px]">
         <div className="text-center">
           {user.photoURL ? (
@@ -20,7 +20,7 @@ const RightSideProfile = () => {
             </span>
           )}
         </div>
-        <span className="text-xl font-semibold">
+        <span className="text-xl font-semibold text-blue-900">
           {user.displayName ? user.displayName : "user"}
         </span>
       </div>

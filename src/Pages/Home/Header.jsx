@@ -19,7 +19,7 @@ const Header = () => {
             src="/public/welcome.json"
           ></Player>
         </span>
-        <span className="font-bold ">
+        <span className="font-semibold text-blue-900">
           {user.displayName ? user.displayName : "User"}
         </span>
       </div>

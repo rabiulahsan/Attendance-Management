@@ -11,7 +11,7 @@ const Classes = () => {
   }, []);
   console.log(classes);
   return (
-    <div className="bg-white rounded-[10px]  p-4">
+    <div className="bg-white rounded-[10px]  p-10">
       <p className="text-xl text-center font-bold">Classes</p>
       <div className=" ">
         {classes.map((cls) => (

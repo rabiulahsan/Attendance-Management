@@ -18,13 +18,13 @@ const LeftSideNavbar = () => {
   };
 
   return (
-    <div className="bg-blue-950 h-[710px] w-full relative ">
+    <div className="bg-blue-950 h-[710px] w-full sticky top-0 ">
       <div className="pb-8 pt-5">
         <Link to="/home">
           <img className="h-[50px] mx-auto" src="Untitled.jpg" alt="" />
         </Link>
       </div>
-      <div className=" text-white">
+      <div className=" text-white relative">
         <ul>
           <li className="navlink">
             <Link to="">
