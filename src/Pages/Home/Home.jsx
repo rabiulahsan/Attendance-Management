@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <div className="flex w-full">
-        <div className="w-1/5">
+        <div className="w-1/5 ">
           <LeftSideNavbar></LeftSideNavbar>
         </div>
         <div className="w-3/5 bg-[#ebeaf8]">

@@ -11,9 +11,9 @@ const Classes = () => {
   }, []);
   console.log(classes);
   return (
-    <div className="bg-white rounded-[10px]  p-5">
+    <div className="bg-white rounded-[10px]  p-4">
       <p className="text-xl text-center font-bold">Classes</p>
-      <div className="">
+      <div className=" ">
         {classes.map((cls) => (
           <Class key={cls._id} cls={cls}></Class>
         ))}

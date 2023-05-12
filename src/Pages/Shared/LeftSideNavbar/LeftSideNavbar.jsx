@@ -18,7 +18,7 @@ const LeftSideNavbar = () => {
   };
 
   return (
-    <div className="bg-blue-950 h-[710px] w-full relative">
+    <div className="bg-blue-950 h-[710px] w-full relative ">
       <div className="pb-8 pt-5">
         <Link to="/home">
           <img className="h-[50px] mx-auto" src="Untitled.jpg" alt="" />
