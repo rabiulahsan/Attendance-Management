@@ -2,5 +2,13 @@
   color: rgb(23, 3, 65);
 }
 .css-cwhad8-MuiDateCalendar-root {
-  width: 280px;
+  width: 280px !important;
+  padding: 0 auto !important;
+}
+.css-e784if-MuiTypography-root {
+  margin: 0 auto !important;
+  font-size: 28px !important;
+}
+.css-i7y1zb-MuiStack-root {
+  padding: 15px !important;
 }
