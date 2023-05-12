@@ -19,7 +19,7 @@ const LeftSideNavbar = () => {
 
   return (
     <div className="bg-blue-950 h-[710px] w-full relative">
-      <div className="py-5">
+      <div className="pb-8 pt-5">
         <Link to="/home">
           <img className="h-[50px] mx-auto" src="Untitled.jpg" alt="" />
         </Link>
@@ -29,7 +29,7 @@ const LeftSideNavbar = () => {
           <li className="navlink">
             <Link to="">
               <span className="flex items-center gap-2">
-                <MdOutlineSpaceDashboard className="text-2xl"></MdOutlineSpaceDashboard>
+                <MdOutlineSpaceDashboard className="text-xl"></MdOutlineSpaceDashboard>
                 Dashboard
               </span>
             </Link>
@@ -37,7 +37,7 @@ const LeftSideNavbar = () => {
           <li className="navlink">
             <Link to="">
               <span className="flex items-center gap-2">
-                <FaBookOpen className="text-2xl"></FaBookOpen>
+                <FaBookOpen className="text-xl"></FaBookOpen>
                 My Classes
               </span>
             </Link>
@@ -45,7 +45,7 @@ const LeftSideNavbar = () => {
           <li className="navlink">
             <Link to="">
               <span className="flex items-center gap-2">
-                <HiOutlineAcademicCap className="text-2xl"></HiOutlineAcademicCap>
+                <HiOutlineAcademicCap className="text-xl"></HiOutlineAcademicCap>
                 Courses
               </span>
             </Link>
@@ -53,7 +53,7 @@ const LeftSideNavbar = () => {
           <li className="navlink">
             <Link to="">
               <span className="flex items-center gap-2">
-                <AiOutlineCalendar className="text-2xl"></AiOutlineCalendar>
+                <AiOutlineCalendar className="text-xl"></AiOutlineCalendar>
                 Routine
               </span>
             </Link>
@@ -61,7 +61,7 @@ const LeftSideNavbar = () => {
           <li className="navlink">
             <Link to="">
               <span className="flex items-center gap-2">
-                <BsFillFileEarmarkCheckFill className="text-2xl"></BsFillFileEarmarkCheckFill>
+                <BsFillFileEarmarkCheckFill className="text-xl"></BsFillFileEarmarkCheckFill>
                 Result
               </span>
             </Link>
@@ -72,7 +72,7 @@ const LeftSideNavbar = () => {
         <li className="bottom-link">
           <Link to="">
             <span className="flex items-center gap-x-2">
-              <AiTwotoneSetting className="text-2xl"></AiTwotoneSetting>
+              <AiTwotoneSetting className="text-xl"></AiTwotoneSetting>
               Setting
             </span>
           </Link>
@@ -80,7 +80,7 @@ const LeftSideNavbar = () => {
         <li className="bottom-link" onClick={handleLogOut}>
           <Link to="/">
             <span className="flex items-center gap-x-2">
-              <FiLogOut className="text-2xl"></FiLogOut>
+              <FiLogOut className="text-xl"></FiLogOut>
               Log Out
             </span>
           </Link>
