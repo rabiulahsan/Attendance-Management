@@ -1,6 +1,5 @@
 [
   {
-    "_id": "c1",
     "batch": "7a-cns",
     "subject": "Computer Network and Security",
     "subjCode": "CNS",
@@ -8,7 +7,6 @@
     "totalStudents": 30
   },
   {
-    "_id": "c2",
     "batch": "7a-pdp",
     "subject": "Parallal Distributing and Processing",
     "subjCode": "PDP",
@@ -16,7 +14,6 @@
     "totalStudents": 25
   },
   {
-    "_id": "c3",
     "batch": "7a-ma",
     "subject": "Multimedia Application",
     "subjCode": "MA",
