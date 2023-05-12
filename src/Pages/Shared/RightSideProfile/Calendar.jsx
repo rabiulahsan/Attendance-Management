@@ -10,7 +10,7 @@ import { useState } from "react";
 const Calendar = () => {
   const [value, setValue] = useState(dayjs());
 
-  const dateInFormat = value.format("DD-MM-YYYY");
+  const dateInFormat = value.format("	MMMM D, YYYY");
   console.log(dateInFormat);
 
   return (
@@ -21,12 +21,14 @@ const Calendar = () => {
             <DateCalendar
               value={value}
               onChange={(newValue) => setValue(newValue)}
-              disableFuture={true}
+              disableFuture={false}
             />
           </DemoItem>
         </DemoContainer>
       </LocalizationProvider>
-      {dateInFormat}
+      <div className="bg-white font-semibold text-center my-2 mx-[5px] py-5  rounded-[10px] text-2xl">
+        {dateInFormat}
+      </div>
     </div>
   );
 };
