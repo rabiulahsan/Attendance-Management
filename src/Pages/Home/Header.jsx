@@ -4,10 +4,8 @@ import "./header.css";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 
 const Header = () => {
-  //  const { user } = useContext(AuthContext);
-  const user = {
-    photoURL: null,
-  };
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="my-[3%] mx-[3%] p-[3%] bg-white rounded-[10px] flex justify-between items-center">
       <div className="text-3xl font-light flex items-center">
@@ -20,7 +18,7 @@ const Header = () => {
           ></Player>
         </span>
         <span className="font-semibold text-blue-900">
-          {user.displayName ? user.displayName : "User"}
+          {user?.displayName ? user.displayName : "User"}
         </span>
       </div>
       <div>
