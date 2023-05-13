@@ -9,7 +9,7 @@ import { useState } from "react";
 import { DateContext } from "./SingleClass";
 
 const CalendarForSingleClass = () => {
-  const { value, setValue } = useContext(DateContext);
+  const { value, setValue, handleDatePicker } = useContext(DateContext);
 
   const dateInFormat = value.format("dddd, MMMM D, YYYY");
   // console.log(dateInFormat);
@@ -24,7 +24,8 @@ const CalendarForSingleClass = () => {
             </p>
             <DateCalendar
               value={value}
-              onChange={(newValue) => setValue(newValue)}
+              // onChange={(newValue) => setValue(newValue)}
+              onChange={(newValue) => handleDatePicker(newValue)}
               disableFuture={true}
             />
           </DemoItem>

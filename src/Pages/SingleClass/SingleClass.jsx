@@ -14,10 +14,14 @@ const SingleClass = () => {
 
   const [value, setValue] = useState(dayjs());
 
+  const handleDatePicker = (newValue) => {
+    setValue(newValue);
+  };
   const dateProvide = {
     id,
     value,
     setValue,
+    handleDatePicker,
   };
 
   return (

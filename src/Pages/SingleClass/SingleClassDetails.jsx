@@ -9,19 +9,19 @@ const SingleClassDetails = ({ classData }) => {
     <div className="my-[3%] mx-[3%] p-[5%] bg-white rounded-[10px] flex justify-between items-center">
       <div className="text-blue-900">
         <p className="">
-          <span className="font-semibold">Course:</span>
+          <span className="font-bold">Course:</span>
           {"    " + subject}
         </p>
         <p className="my-3">
-          <span className="font-semibold">Code:</span>
+          <span className="font-bold">Code:</span>
           {"    " + subjCode}
         </p>
         <p className="">
-          <span className="font-semibold">Semester:</span>
+          <span className="font-bold">Semester:</span>
           {" " + semester}
         </p>
         <p className="my-3">
-          <span className="font-semibold">Total Students:</span>
+          <span className="font-bold">Total Students:</span>
           {"    " + totalStudents}
         </p>
       </div>

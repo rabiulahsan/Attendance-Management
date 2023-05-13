@@ -6,7 +6,6 @@ import Signup from "../Pages/Signup/Signup";
 import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home";
 import SingleClass from "../Pages/SingleClass/SingleClass";
-import ClassList from "../Pages/ClassList/ClassList";
 
 const router = createBrowserRouter([
   {
