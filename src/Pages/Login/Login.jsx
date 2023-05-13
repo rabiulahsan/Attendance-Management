@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { user, signIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -14,13 +14,18 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    signIn(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate("/home");
-      })
-      .catch((error) => console.log(error));
+    if (user) {
+      alert("At first logout");
+      return;
+    } else {
+      signIn(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+          navigate("/home");
+        })
+        .catch((error) => console.log(error));
+    }
   };
   return (
     <div className="flex justify-center items-center bg-blue-300 h-[710px]">

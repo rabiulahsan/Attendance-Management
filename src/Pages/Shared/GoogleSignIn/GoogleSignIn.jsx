@@ -4,19 +4,25 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const GoogleSignIn = () => {
-  const { googleLogin } = useContext(AuthContext);
+  const { user, googleLogin } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
   const handleGoogleSignIn = () => {
-    googleLogin()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate("/home");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (user) {
+      alert("At first logout");
+      return;
+    } else {
+      googleLogin()
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+          navigate("/home");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   };
   return (
     <div
