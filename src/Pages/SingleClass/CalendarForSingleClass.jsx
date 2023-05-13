@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import dayjs from "dayjs";
 import "./../Shared/RightSideProfile/Calendar.css";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
@@ -6,9 +6,10 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
+import { DateContext } from "./SingleClass";
 
 const CalendarForSingleClass = () => {
-  const [value, setValue] = useState(dayjs());
+  const { value, setValue } = useContext(DateContext);
 
   const dateInFormat = value.format("dddd, MMMM D, YYYY");
   console.log(dateInFormat);
