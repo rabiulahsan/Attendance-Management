@@ -12,7 +12,7 @@ const CalendarForSingleClass = () => {
   const { value, setValue } = useContext(DateContext);
 
   const dateInFormat = value.format("dddd, MMMM D, YYYY");
-  console.log(dateInFormat);
+  // console.log(dateInFormat);
 
   return (
     <div>

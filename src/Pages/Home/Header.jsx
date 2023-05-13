@@ -16,7 +16,7 @@ const Header = () => {
             className="h-[45px] "
             autoplay
             loop
-            src="/public/welcome.json"
+            src="/welcome.json"
           ></Player>
         </span>
         <span className="font-semibold text-blue-900">
@@ -26,12 +26,7 @@ const Header = () => {
       <div>
         {/* <iframe src="https://embed.lottiefiles.com/animation/69160"></iframe> */}
         <span className=" inline-block">
-          <Player
-            className="h-[75px]"
-            autoplay
-            loop
-            src="/public/hello.json"
-          ></Player>
+          <Player className="h-[75px]" autoplay loop src="/hello.json"></Player>
         </span>
       </div>
     </div>

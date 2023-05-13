@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import StdRow from "../Home/StdRow";
 import { Button } from "@mui/material";
+import { DateContext } from "./SingleClass";
+import { json } from "react-router-dom";
 
 const StdTable = () => {
   const [stds, setStds] = useState([]);
   const [stdArr, setStdArr] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+
+  const { value, id } = useContext(DateContext);
+  const dateInFormat = value.format("M-D-YYYY");
 
   useEffect(() => {
     fetch("http://localhost:5000/students")
@@ -15,7 +20,29 @@ const StdTable = () => {
 
   const handleSubmitAttendance = () => {
     console.log(stdArr);
-    setSubmitted(true);
+    // setSubmitted(true);
+    console.log(dateInFormat);
+    const attendanceData = {
+      date: dateInFormat,
+      batchId: id,
+      attendIds: stdArr,
+    };
+    console.log(attendanceData);
+
+    fetch(`http://localhost:5000/home/${dateInFormat}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(attendanceData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          alert("user updated successfully");
+        }
+      });
   };
   return (
     <div className="my-[3%] mx-[3%] p-[5%] bg-white rounded-[10px]">

@@ -15,6 +15,7 @@ const SingleClass = () => {
   const [value, setValue] = useState(dayjs());
 
   const dateProvide = {
+    id,
     value,
     setValue,
   };
