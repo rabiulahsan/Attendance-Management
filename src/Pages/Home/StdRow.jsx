@@ -17,7 +17,7 @@ const StdRow = ({ std, setStdArr }) => {
   };
 
   return (
-    <tr className="w-full text-center border border-gray-500 ">
+    <tr className="hover:bg-gray-100 w-full text-center  ">
       <td className="py-5">{std_id ? std_id : ""}</td>
       <td>{std_name ? std_name : ""}</td>
       <td>
@@ -32,17 +32,17 @@ const StdRow = ({ std, setStdArr }) => {
           />
         </label>
       </td>
-      <td>
+      <td className="text-white">
         {check ? (
           <span
-            className="font-semibold px-6  py-3 bg-red-100 rounded"
+            className="font-semibold px-6  py-2 bg-red-400 rounded"
             color="error"
           >
             Absent
           </span>
         ) : (
           <span
-            className="font-semibold px-6  py-3 bg-green-100 rounded"
+            className="font-semibold px-6  py-2 bg-blue-400 rounded"
             color="success"
           >
             Present

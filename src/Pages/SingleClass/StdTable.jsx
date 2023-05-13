@@ -18,13 +18,10 @@ const StdTable = () => {
     setSubmitted(true);
   };
   return (
-    <div>
-      <p className="font-bold"> Hello World</p>
-      <p>{stds.length}</p>
-
-      <table className="table-fixed w-3/5 border border-gray-500">
+    <div className="my-[3%] mx-[3%] p-[5%] bg-white rounded-[10px]">
+      <table className="table-fixed w-full ">
         {/* head */}
-        <thead>
+        <thead className="border border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-gray-100">
           <tr>
             <th className="py-5">ID</th>
             <th>Name</th>
@@ -38,15 +35,17 @@ const StdTable = () => {
           ))}
         </tbody>
       </table>
-      {submitted ? (
-        <Button disabled onClick={handleSubmitAttendance} variant="contained">
-          Submit
-        </Button>
-      ) : (
-        <Button onClick={handleSubmitAttendance} variant="contained">
-          Submit
-        </Button>
-      )}
+      <div className="flex justify-center my-5 pt-5">
+        {submitted ? (
+          <Button disabled onClick={handleSubmitAttendance} variant="contained">
+            Submit
+          </Button>
+        ) : (
+          <Button onClick={handleSubmitAttendance} variant="contained">
+            Submit
+          </Button>
+        )}
+      </div>
     </div>
   );
 };
