@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 const SingleClassDetails = ({ classData }) => {
   const { batch, semester, subjCode, totalStudents, subject } = classData;
   const dateValue = dayjs();
-  const formattedDate = dateValue.format("dddd, MMMM D, YYYY");
+  const formattedDate = dateValue.format("h:mm A");
   return (
     <div className="my-[3%] mx-[3%] p-[5%] bg-white rounded-[10px] flex justify-between items-center">
       <div className="text-blue-900">
@@ -25,7 +25,7 @@ const SingleClassDetails = ({ classData }) => {
           {"    " + totalStudents}
         </p>
       </div>
-      <div className="text-blue-900 font-semibold">
+      <div className="text-blue-900 font-semibold text-3xl">
         <p>{"    " + formattedDate}</p>
       </div>
     </div>
