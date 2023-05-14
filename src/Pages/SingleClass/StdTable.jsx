@@ -3,13 +3,14 @@ import StdRow from "../Home/StdRow";
 import { Button } from "@mui/material";
 import { DateContext } from "./SingleClass";
 import { json } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const StdTable = () => {
   const [stds, setStds] = useState([]);
   const [stdArr, setStdArr] = useState([]);
-  const [submitted, setSubmitted] = useState(false);
 
-  const { value, id } = useContext(DateContext);
+  const { user } = useContext(AuthContext);
+  const { value, id, setSubmitted, submitted } = useContext(DateContext);
   const dateInFormat = value.format("M-D-YYYY");
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const StdTable = () => {
       date: dateInFormat,
       batchId: id,
       attendIds: stdArr,
+      email: user.email,
     };
     console.log(attendanceData);
 

@@ -7,12 +7,14 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
 import { DateContext } from "./SingleClass";
+import { Link } from "react-router-dom";
 
 const CalendarForSingleClass = () => {
   const { value, setValue, handleDatePicker } = useContext(DateContext);
 
   const dateInFormat = value.format("dddd, MMMM D, YYYY");
   // console.log(dateInFormat);
+  const urlDateFormat = value.format("M-D-YYYY");
 
   return (
     <div>
@@ -22,6 +24,7 @@ const CalendarForSingleClass = () => {
             <p className="text-center font-semibold text-blue-900 text-2xl">
               Calendar
             </p>
+
             <DateCalendar
               value={value}
               // onChange={(newValue) => setValue(newValue)}

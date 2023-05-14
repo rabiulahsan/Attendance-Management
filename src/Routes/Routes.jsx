@@ -6,6 +6,7 @@ import Signup from "../Pages/Signup/Signup";
 import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home";
 import SingleClass from "../Pages/SingleClass/SingleClass";
+import ClassByDate from "../Pages/ClassByDate/ClassByDate";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/home/${params.id}`),
       },
+      // {
+      //   path: "/home/:date",
+      //   element: <ClassByDate></ClassByDate>,
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:5000/home/${params.date}`),
+      // },
     ],
   },
 ]);
