@@ -10,7 +10,7 @@ const Class = ({ cls }) => {
       <div className="flex justify-between items-center my-3">
         <p>{cls.semester} Semester</p>
 
-        <Link to={`/home/${cls._id}`}>
+        <Link to={`/home/${cls.batch}`}>
           <span className="text-xl cursor-pointer">
             <AiOutlineArrowRight></AiOutlineArrowRight>
           </span>

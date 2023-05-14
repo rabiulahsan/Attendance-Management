@@ -1,8 +1,11 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { DateContext } from "../SingleClass/SingleClass";
 
 const StdRow = ({ std, setStdArr }) => {
   const { std_id, std_name } = std;
+
+  const { attendances, value } = useContext(DateContext);
 
   const [check, setCheck] = useState(true);
 
@@ -15,6 +18,22 @@ const StdRow = ({ std, setStdArr }) => {
       setStdArr((prev) => prev.filter((std) => std !== id));
     }
   };
+
+  // useEffect(() => {
+  //   if (attendances) {
+  //     if (attendances[0]?.attendIds.includes(std_id.toString())) {
+  //       console.log("y");
+  //       console.log(std_id, attendances[0]?.attendIds);
+  //       setCheck(true);
+  //     } else {
+  //       console.log("n");
+  //       console.log(std_id, attendances[0]?.attendIds);
+  //       setCheck(false);
+  //     }
+  //   } else {
+  //     goto;
+  //   }
+  // }, [value]);
 
   return (
     <tr className="hover:bg-gray-100 w-full text-center  ">

@@ -25,14 +25,22 @@ const SingleClass = () => {
     setValue(newValue);
 
     const dateInFormat = newValue.format("M-D-YYYY");
+
     fetch(
-      `http://localhost:5000/attendances?email=${user.email}&batchId=${id}&date=${dateInFormat}`
+      `http://localhost:5000/attendances?email=${user.email}&batchCode=${id}&date=${dateInFormat}`
     )
       .then((res) => res.json())
       .then((data) => setAttendances(data));
 
-    console.log(attendances);
+    // console.log(newValue);
+    // console.log(dateInFormat);
+    // // console.log(attendances);
+    // console.log(attendances[0]?.attendIds);
   };
+
+  useEffect(() => {
+    console.log(attendances);
+  }, [attendances]);
   const dateProvide = {
     id,
     value,
@@ -40,6 +48,7 @@ const SingleClass = () => {
     handleDatePicker,
     submitted,
     setSubmitted,
+    attendances,
   };
 
   return (

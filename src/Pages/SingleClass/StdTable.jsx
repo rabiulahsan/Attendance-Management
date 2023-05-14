@@ -4,13 +4,16 @@ import { Button } from "@mui/material";
 import { DateContext } from "./SingleClass";
 import { json } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import AttendStudent from "./AttendStudent";
 
 const StdTable = () => {
   const [stds, setStds] = useState([]);
   const [stdArr, setStdArr] = useState([]);
+  const [show, setShow] = useState(false);
 
   const { user } = useContext(AuthContext);
-  const { value, id, setSubmitted, submitted } = useContext(DateContext);
+  const { value, id, setSubmitted, submitted, attendances } =
+    useContext(DateContext);
   const dateInFormat = value.format("M-D-YYYY");
 
   useEffect(() => {
@@ -19,19 +22,25 @@ const StdTable = () => {
       .then((data) => setStds(data));
   }, []);
 
+  const attendIds = attendances[0]?.attendIds;
+  console.log(attendIds);
+  const handleResult = () => {
+    setShow(!show);
+  };
+
   const handleSubmitAttendance = () => {
     console.log(stdArr);
     // setSubmitted(true);
     console.log(dateInFormat);
     const attendanceData = {
       date: dateInFormat,
-      batchId: id,
+      batchCode: id,
       attendIds: stdArr,
       email: user.email,
     };
     console.log(attendanceData);
 
-    fetch(`http://localhost:5000/home/${dateInFormat}`, {
+    fetch(`http://localhost:5000/home/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -64,7 +73,7 @@ const StdTable = () => {
           ))}
         </tbody>
       </table>
-      <div className="flex justify-center my-5 pt-5">
+      <div className="flex justify-center my-5 pt-5 gap-5">
         {submitted ? (
           <Button disabled onClick={handleSubmitAttendance} variant="contained">
             Submit
@@ -74,7 +83,21 @@ const StdTable = () => {
             Submit
           </Button>
         )}
+        <Button onClick={handleResult} variant="contained">
+          See Attendance
+        </Button>
       </div>
+      {show ? (
+        <div className="mt-[5%] text-center flex flex-col text-blue-900">
+          <p className="font-bold text-2xl my-[4%]">Student&apos;s Id</p>
+
+          {attendIds?.map((id) => (
+            <AttendStudent key={id} id={id} stds={stds}></AttendStudent>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
