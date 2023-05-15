@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
 const Login = () => {
   const { user, signIn } = useContext(AuthContext);
+  const [logInError, setLogInError] = useState("");
 
   const navigate = useNavigate();
   if (user) {
@@ -27,15 +28,18 @@ const Login = () => {
           console.log(user);
           navigate("/home");
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error.message);
+          setLogInError(error.message);
+        });
     }
   };
   return (
     <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
-      <div className="w-1/5 bg-blue-900 mb-4 h-[476px] flex justify-center items-center text-white text-center">
+      <div className="w-1/5 bg-blue-900 mb-4 h-[516px] flex justify-center items-center text-white text-center">
         <img src="/login.svg" alt="" />
       </div>
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 h-[516px]">
         <form onSubmit={handleLogin} className=" ">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -58,6 +62,10 @@ const Login = () => {
               name="password"
               placeholder="Password"
             ></input>
+          </div>
+
+          <div className="text-red-400 mb-6 text-xs">
+            <p>{logInError}</p>
           </div>
 
           <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">

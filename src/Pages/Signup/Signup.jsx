@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -7,6 +7,7 @@ import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
 const Signup = () => {
   const { createUser, logOut } = useContext(AuthContext);
 
+  const [signUpError, setSignUpError] = useState("");
   const navigate = useNavigate();
 
   const handleSignUp = (event) => {
@@ -27,7 +28,10 @@ const Signup = () => {
           .then()
           .catch((error) => console.log(error));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error.message);
+        setSignUpError(error.message);
+      });
   };
 
   //update user
@@ -43,7 +47,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 ">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 h-[583px] ">
         <form onSubmit={handleSignUp} className="">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -67,7 +71,7 @@ const Signup = () => {
               placeholder="E-mail"
             ></input>
           </div>
-          <div className="mb-6">
+          <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Password
             </label>
@@ -77,6 +81,10 @@ const Signup = () => {
               name="password"
               placeholder="Password"
             ></input>
+          </div>
+
+          <div className="text-red-400 mb-6 text-xs">
+            <p>{signUpError}</p>
           </div>
 
           <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -101,8 +109,9 @@ const Signup = () => {
           </Link>
         </p>
       </div>
-      <div className="w-1/5 bg-blue-900 mb-4 h-[567px] flex justify-center items-center text-white text-center">
+      <div className="w-1/5 bg-blue-900 mb-4 h-[583px] flex flex-col justify-center items-center text-white text-center">
         <img src="/signup.svg" alt="" />
+        <p className="text-xl font-semibold">Sign Up</p>
       </div>
     </div>
   );
