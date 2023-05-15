@@ -27,7 +27,7 @@ const LeftSideNavbar = () => {
       <div className=" text-white relative">
         <ul>
           <li className="navlink">
-            <Link to="">
+            <Link to="/home">
               <span className="flex items-center gap-2">
                 <MdOutlineSpaceDashboard className="text-xl"></MdOutlineSpaceDashboard>
                 Dashboard
@@ -35,7 +35,7 @@ const LeftSideNavbar = () => {
             </Link>
           </li>
           <li className="navlink">
-            <Link to="">
+            <Link to="/home">
               <span className="flex items-center gap-2">
                 <FaBookOpen className="text-xl"></FaBookOpen>
                 My Classes

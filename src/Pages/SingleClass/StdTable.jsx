@@ -5,6 +5,8 @@ import { DateContext } from "./SingleClass";
 import { json } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import AttendStudent from "./AttendStudent";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StdTable = () => {
   const [stds, setStds] = useState([]);
@@ -27,6 +29,29 @@ const StdTable = () => {
   const handleResult = () => {
     setShow(!show);
   };
+
+  const submitNotify = () =>
+    toast.success("Attendance Submitted", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const updateNotify = () =>
+    toast.success("Updated Successfully", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   const handleSubmitAttendance = () => {
     console.log(stdArr);
@@ -51,7 +76,9 @@ const StdTable = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          alert("user updated successfully");
+          updateNotify();
+        } else if (data.upsertedCount > 0) {
+          submitNotify();
         }
       });
   };
@@ -91,6 +118,14 @@ const StdTable = () => {
         <div className="mt-[5%] text-center flex flex-col text-blue-900">
           <p className="font-bold text-2xl my-[4%]">Student&apos;s Id</p>
 
+          {attendIds ? (
+            <p className="my-3 font-semibold text-lg">
+              Total Students: {attendIds?.length}
+            </p>
+          ) : (
+            <p className="my-3 font-semibold text-lg">No student to show</p>
+          )}
+
           {attendIds?.map((id) => (
             <AttendStudent key={id} id={id} stds={stds}></AttendStudent>
           ))}
@@ -98,6 +133,18 @@ const StdTable = () => {
       ) : (
         ""
       )}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
