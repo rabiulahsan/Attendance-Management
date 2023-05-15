@@ -42,7 +42,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-blue-300 h-[710px]">
+    <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 ">
         <form onSubmit={handleSignUp} className="">
           <div className="mb-4">
@@ -100,6 +100,9 @@ const Signup = () => {
             </span>
           </Link>
         </p>
+      </div>
+      <div className="w-1/5 bg-blue-900 mb-4 h-[567px] flex justify-center items-center text-white text-center">
+        <img src="/signup.svg" alt="" />
       </div>
     </div>
   );

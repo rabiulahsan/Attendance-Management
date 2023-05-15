@@ -7,6 +7,9 @@ const Login = () => {
   const { user, signIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
+  if (user) {
+    navigate("/home");
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,7 +31,10 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center bg-blue-300 h-[710px]">
+    <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
+      <div className="w-1/5 bg-blue-900 mb-4 h-[476px] flex justify-center items-center text-white text-center">
+        <img src="/login.svg" alt="" />
+      </div>
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5">
         <form onSubmit={handleLogin} className=" ">
           <div className="mb-4">
