@@ -36,13 +36,13 @@ const router = createBrowserRouter([
         path: "/home/:id",
         element: <SingleClass></SingleClass>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/home/${params.id}`),
+          fetch(`https://attendance-server-six.vercel.app/home/${params.id}`),
       },
       // {
       //   path: "/home/:date",
       //   element: <ClassByDate></ClassByDate>,
       //   loader: ({ params }) =>
-      //     fetch(`http://localhost:5000/home/${params.date}`),
+      //     fetch(`https://attendance-server-six.vercel.app/home/${params.date}`),
       // },
     ],
   },

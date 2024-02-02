@@ -19,7 +19,7 @@ const StdTable = () => {
   const dateInFormat = value.format("M-D-YYYY");
 
   useEffect(() => {
-    fetch("http://localhost:5000/students")
+    fetch("https://attendance-server-six.vercel.app/students")
       .then((res) => res.json())
       .then((data) => setStds(data));
   }, []);
@@ -65,7 +65,7 @@ const StdTable = () => {
     };
     console.log(attendanceData);
 
-    fetch(`http://localhost:5000/home/${id}`, {
+    fetch(`https://attendance-server-six.vercel.app/home/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

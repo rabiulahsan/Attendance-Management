@@ -27,7 +27,7 @@ const SingleClass = () => {
     const dateInFormat = newValue.format("M-D-YYYY");
 
     fetch(
-      `http://localhost:5000/attendances?email=${user.email}&batchCode=${id}&date=${dateInFormat}`
+      `https://attendance-server-six.vercel.app/attendances?email=${user.email}&batchCode=${id}&date=${dateInFormat}`
     )
       .then((res) => res.json())
       .then((data) => setAttendances(data));
