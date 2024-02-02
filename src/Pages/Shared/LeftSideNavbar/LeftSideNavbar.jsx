@@ -78,7 +78,7 @@ const LeftSideNavbar = () => {
           </Link>
         </li>
         <li className="bottom-link" onClick={handleLogOut}>
-          <Link to="/">
+          <Link to="/login">
             <span className="flex items-center gap-x-2">
               <FiLogOut className="text-xl"></FiLogOut>
               Log Out
